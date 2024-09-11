@@ -7,7 +7,7 @@ import AOS from 'aos';
 
 import HeroSection from "./Components/HeroSection";
 import AboutSection from "./Components/AboutSection";
-import Navbar from "./Components/NavBar";
+import Navbar from "./Components/Navbar";
 import HelloSection from "./Components/HelloSection";
 import Timeline from "./Components/Timeline";
 import Footer from "./Components/Footer";
