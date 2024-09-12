@@ -1,7 +1,4 @@
 /** @format */
-
-// import girl_hello from "../assets/hellosction/gallery-6.jpg";
-// import boy_hello from "../assets/hellosction/Groom.jpg";
 import tampbg from "../assets/hellosction/tamp-bg-1.png";
 import { useEffect } from "react";
 import "tailwindcss/tailwind.css";
@@ -25,10 +22,10 @@ const HelloSection = () => {
 
   return (
     <div className="relative min-h-60 flex items-center justify-center bg-[#fffff0]">
-      <div className="absolute md:bottom-28 bottom-44 right-0 z-43">
+      <div className="absolute md:bottom-36 bottom-44 z-43" style={{right:'-23px'}}>
         <img src={tampbg} alt="corner_img" />
       </div>
-      <div className="absolute bottom-36 md:bottom-20 left-0 rotate-180 z-40 top">
+      <div className="absolute bottom-36 md:bottom-32 left-0 rotate-180 z-40 top" style={{left:'-17px'}}>
         <img src={tampbg} alt="corner_img" />
       </div>
       <div className="w-full max-w-4xl mx-auto p-4 sm:p-8">
@@ -41,7 +38,7 @@ const HelloSection = () => {
             <img
               src={line}
               alt=""
-              className="h-10 w-12 colo-[#80233a] rounded-lg"
+              className="h-10 w-12 color-[#80233a] rounded-lg"
             />
             <h4 className="text-4xl sm:text-6xl text-gray-600 font-GreatVibes">
               We invite you to celebrate our wedding

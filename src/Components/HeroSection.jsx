@@ -19,7 +19,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className='relative w-full h-screen overflow-hidden' id="home">
+    <div className='relative w-full h-96 sm:h-screen  overflow-hidden' id="home">
       {images.map((image, index) => (
         <div
           key={index}

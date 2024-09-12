@@ -135,10 +135,10 @@ const Gallery = () => {
 
   return (
     <div className="text-center px-4 py-4 lg:px-12 bg-[#fffff0]">
-      <h1 className="text-4xl font-bold mb-4">Wedding Gallery</h1>
-      <p className="text-gray-500 mb-8">
+      <h1 className="text-6xl text-[#80233a] font-bold mb-4 font-dancing">Wedding Gallery</h1>
+      {/* <p className="text-gray-500 mb-8">
         Lorem Ipsum is simply dummy text of the printing and typesetting
-      </p>
+      </p> */}
       {isUser.role === "admin" && (
         <>
           <input type="file" onChange={handleFileChange} />

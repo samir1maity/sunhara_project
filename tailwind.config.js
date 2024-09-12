@@ -10,6 +10,7 @@ export default {
       fontFamily: {
         GreatVibes: ["Great Vibes", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
+        dancing: ['"Dancing Script"', 'cursive']
       },
       width: {
         23: "23%",

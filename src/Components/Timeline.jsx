@@ -5,6 +5,8 @@ import dj from "../assets/SVG/dj-dj-svgrepo-com.svg"
 import birthday from "../assets/SVG/birthday-cake-svgrepo-com.svg"
 import p_conference from "../assets/SVG/conference.svg"
 import brand_p from "../assets/SVG/brand.svg"
+import flower from "../assets/about/wedding-bg.png"
+import flower2 from "../assets/about/team-1-bg.png"
 const services = [
   {
     icon: weddingRing, // Replace with actual icon component if needed
@@ -52,14 +54,16 @@ const Timeline = () => {
   return (
     <section className='bg-[#fffff0] py-16 lg:px-12' id="services" >
       <div className='container mx-auto px-4 '>
-        <h2 className='text-4xl font-bold text-center mb-12 m-auto text-[#80233a]'>OUR SERVICES</h2>
+        <h2 className='text-6xl font-bold text-center mb-12 m-auto text-[#80233a] font-dancing'>Our Services</h2>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 '>
           {services.map((service, index) => (
             <div
               key={index}
-              className='bg-white p-8 rounded-lg shadow-lg text-center transition-transform duration-300 ease-in-out transform hover:scale-110 flex items-center justify-center flex-col'
+              className='bg-white relative p-8 rounded-lg shadow-lg text-center transition-transform duration-300 ease-in-out transform hover:scale-110 flex items-center justify-center flex-col'
               data-aos="fade-up">
               <img src={service.icon} alt="wedding" className='text-orange-500 text-6xl mb-4 h-20 w-20'/>
+              <img src={flower} alt="flower" className='w-36 h-64 absolute right-0 top-0 opacity-25'/>
+              <img src={flower2} alt="flower" className='w-36 h-36 absolute left-0 top-0 opacity-60'/>
                
               <h3 className='text-2xl font-bold mb-4 text-[#80233a]'>{service.title}</h3>
               <p className='text-gray-700'>{service.description}</p>

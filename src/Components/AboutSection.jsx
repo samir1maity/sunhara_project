@@ -9,7 +9,7 @@ const AboutSection = () => {
   return (
     <div
       id="about"
-      className=" items-center sm:px-16 px-8 bg-[#f5f5dc] flex flex-col md:flex-row relative"
+      className=" items-center py-10 sm:px-16 px-8 bg-[#f5f5dc] flex flex-col md:flex-row relative"
       style={{ minHeight: "90vh" }}
     >
       <img
@@ -30,8 +30,10 @@ const AboutSection = () => {
         />
       </div>
       <div className="flex flex-col justify-center md:p-8 w-full sm:w-full md:w-1/2 h-full sm:gap-2">
-        <h2 className="text-[#80233a] text-4xl font-bold ">ABOUT US</h2>
-        <h3 className="text-4xl font-bold mt-2 font-GreatVibes text-gray-600">
+        <h2 className="text-[#80233a] text-6xl font-bold mt-4 font-dancing">
+          About us
+        </h2>
+        <h3 className="text-4xl font-semibold mt-2  text-gray-600 mt-4 ">
           We Make Your Every Moment
         </h3>
         <p className="mt-4 text-gray-600  text-xl">
@@ -55,10 +57,9 @@ const AboutSection = () => {
               className="w-24 h-24 rounded-full object-cover"
             />
             <div className="mt-4 md:mt-0 md:ml-4 text-center md:text-left">
-              <h4 className="text-2xl font-bold">Evelyn</h4>
-              <p className="text-gray-700">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+              <h4 className="text-2xl font-bold text-[#80233a]">Sunhara</h4>
+              <p className="text-gray-800 font-bold">
+                "Sunhare sapne, humare saath pura karo."
               </p>
               <div className="flex justify-center md:justify-start gap-2 mt-4">
                 <a href="#" className="hover:text-pink-600">
@@ -78,7 +79,7 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center lg:mt-4">
+        {/* <div className="flex flex-col md:flex-row justify-between items-center lg:mt-4">
           <div className="flex items-center  md:mt-0">
             <div className="">
               <FaPhoneSquareAlt size={18} />
@@ -87,7 +88,7 @@ const AboutSection = () => {
               +123 456 7890
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

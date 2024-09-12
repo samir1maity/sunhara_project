@@ -8,11 +8,36 @@ import sunhara from "../assets/logo/sunhara.png";
 import insta from "../assets/SVG/instagram-svgrepo-com.svg";
 import { Link } from "react-scroll";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { getFirestore } from "firebase/firestore";
+
+const DB = getFirestore();
+
+// import { auth, db } from "./firebase";
+// import { getDoc } from "firebase/firestore";
 
 const Footer = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isUser, setIsUser] = useState("");
+
+  const fetchedUserData = async () => {
+    auth.onAuthStateChanged(async (user) => {
+      console.log(user);
+      const docRef = doc(db, "Users", user.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        console.log("docSnap.datab from gallery", docSnap.data());
+        setIsUser(docSnap.data());
+      } else {
+        console.log("user is not logged in");
+      }
+    });
+  };
+
+  useEffect(() => {
+    fetchedUserData();
+  }, []);
 
   const handleOpenLoginModal = () => {
     setOpenLoginModal(true);
@@ -30,19 +55,6 @@ const Footer = () => {
     } catch (error) {}
     onClose();
   };
-
-  // const fetchedUserData = async () => {
-  //   auth.onAuthStateChanged(async (user) => {
-  //     console.log(user);
-  //     const docRef = doc(db, "Users", user.uid);
-  //     const docSnap = await getDoc(docRef);
-  //     if (docSnap.exists()) {
-  //       console.log("docSnap.data", docSnap.data());
-  //     } else {
-  //       console.log("user is not logged in");
-  //     }
-  //   });
-  // };
 
   async function signOut() {
     try {
@@ -173,13 +185,27 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="hover:text-orange-500"
-                  onClick={handleOpenLoginModal}
-                >
-                  log in
-                </a>
+                {isUser ? (
+                  <>
+                    <a
+                      href="#"
+                      className="hover:text-orange-500"
+                      onClick={signOut}
+                    >
+                      Sign out
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <a
+                      href="#"
+                      className="hover:text-orange-500"
+                      onClick={handleOpenLoginModal}
+                    >
+                      log in
+                    </a>
+                  </>
+                )}
               </li>
             </ul>
           </div>
@@ -192,8 +218,16 @@ const Footer = () => {
                 📍 Konnagar, Ghatal, Paschim Medinipur, West Bengal 721212
               </li>
               <li>✉️ sunharaweddingplanner@gmail.com</li>
-              <li>📞 +91 9614187462</li>
-              <li>📞 +91 7908172440</li>
+              <li>
+                <a href="tel:+7908172440" className="">
+                  📞 +91 9614187462
+                </a>
+              </li>
+              <li>
+                <a href="tel:+7908172440" className="">
+                  📞 +91 7908172440
+                </a>
+              </li>
               <li>🕒 Open 10am - 7pm, Sunday closed</li>
             </ul>
           </div>
@@ -202,10 +236,20 @@ const Footer = () => {
         {/* Social Icons and Copyright */}
         <div className="mt-8 border-t border-gray-700 text-center md:flex md:justify-between">
           <div className="mb-4 mt-4 md:mb-0 flex items-center justify-center md:justify-start">
-            <a href="https://www.facebook.com/profile.php?id=100083529304467&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" className="text-grey-500 mx-2">
+            <a
+              href="https://www.facebook.com/profile.php?id=100083529304467&mibextid=ZbWKwL"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-grey-500 mx-2"
+            >
               <FaFacebook size={26} />
             </a>
-            <a href="https://www.instagram.com/sunheraweddingplanner20?igsh=YjBldjB5MWs2cnFk&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-grey-500 mx-2">
+            <a
+              href="https://www.instagram.com/sunheraweddingplanner20?igsh=YjBldjB5MWs2cnFk&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-grey-500 mx-2"
+            >
               <FaInstagram size={26} />
             </a>
           </div>
