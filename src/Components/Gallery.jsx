@@ -135,7 +135,17 @@ const Gallery = () => {
 
   return (
     <div className="text-center px-4 py-4 lg:px-12 bg-[#fffff0]">
-      <h1 className="text-6xl text-[#80233a] font-bold mb-4 font-dancing">Wedding Gallery</h1>
+      <div className="text-6xl flex items-center justify-center font-bold text-center mb-12 m-auto text-[#80233a] font-dancing">
+        <div className="w-72 max-w-4xl px-4">
+          <div className="h-1 bg-gradient-to-r from-transparent via-[#80233a] to-transparent"></div>
+        </div>
+        <div className="text-6xl flex items-center text-[#80233a] font-bold  font-dancing">
+          Wedding Gallery
+        </div>
+        <div className="w-72 max-w-4xl px-4">
+          <div className="h-1 bg-gradient-to-r from-transparent via-[#80233a] to-transparent"></div>
+        </div>
+      </div>
       {/* <p className="text-gray-500 mb-8">
         Lorem Ipsum is simply dummy text of the printing and typesetting
       </p> */}
@@ -165,13 +175,13 @@ const Gallery = () => {
                   src={image?.url}
                   alt={image?.alt}
                 />
-                {isUser.role === 'admin' && (
+                {isUser.role === "admin" && (
                   <button
-                  onClick={() => handleDelete(index)}
-                  className="absolute top-0 right-0 p-2 bg-red-500 text-white rounded"
-                >
-                  Delete
-                </button>
+                    onClick={() => handleDelete(index)}
+                    className="absolute top-0 right-0 p-2 bg-red-500 text-white rounded"
+                  >
+                    Delete
+                  </button>
                 )}
               </>
             ) : (

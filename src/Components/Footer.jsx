@@ -6,8 +6,10 @@ import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import sunhara from "../assets/logo/sunhara.png";
 import insta from "../assets/SVG/instagram-svgrepo-com.svg";
+import location from "../assets/SVG/location.svg";
 import { Link } from "react-scroll";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+import {MdLocationOn} from "react-icons/md"
 import { getFirestore } from "firebase/firestore";
 
 const DB = getFirestore();
@@ -65,14 +67,10 @@ const Footer = () => {
     }
   }
 
-  // useEffect(() => {
-  //   fetchedUserData();
-  // }, []);
-
   return (
     <footer className="bg-[#800020] text-white py-8" id="footer">
       {openLoginModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center mb-5 justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-md">
             <h2 className="text-2xl font-semibold mb-4">Login</h2>
             <form onSubmit={handleSubmit}>
@@ -214,8 +212,12 @@ const Footer = () => {
           <div className="text-center md:text-left md:w-1/3">
             <h3 className="text-lg font-bold mb-4">Quick Contact</h3>
             <ul className="space-y-2">
-              <li>
-                📍 Konnagar, Ghatal, Paschim Medinipur, West Bengal 721212
+              <li className="flex items-start flex-col">
+                <span className="flex items-start">
+                  <MdLocationOn size={20} className="mt-1"/>
+                  Konnagar, Ghatal, Paschim Medinipur
+                </span>
+                <span className="block ml-6">West Bengal 721212</span>
               </li>
               <li>✉️ sunharaweddingplanner@gmail.com</li>
               <li>
@@ -224,8 +226,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="tel:+7908172440" className="">
-                  📞 +91 7908172440
+                <a href="tel:+ 9832376412" className="">
+                  📞 +91 9832376412
                 </a>
               </li>
               <li>🕒 Open 10am - 7pm, Sunday closed</li>
@@ -233,30 +235,49 @@ const Footer = () => {
           </div>
         </div>
 
+        <div
+          className="mb-2 mt-2 md:mb-0 flex items-center justify-center md:justify-start"
+          style={{ padding: "7px 0" }}
+        >
+          <div>Follow us on :</div>
+          <a
+            href="https://www.facebook.com/profile.php?id=100083529304467&mibextid=ZbWKwL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-grey-500 mx-2"
+          >
+            <FaFacebook size={26} />
+          </a>
+          <a
+            href="https://www.instagram.com/sunheraweddingplanner20?igsh=YjBldjB5MWs2cnFk&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-grey-500 mx-2"
+          >
+            <FaInstagram
+              size={26}
+              color="bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888]"
+            />
+          </a>
+        </div>
+
         {/* Social Icons and Copyright */}
-        <div className="mt-8 border-t border-gray-700 text-center md:flex md:justify-between">
-          <div className="mb-4 mt-4 md:mb-0 flex items-center justify-center md:justify-start">
-            <a
-              href="https://www.facebook.com/profile.php?id=100083529304467&mibextid=ZbWKwL"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-grey-500 mx-2"
-            >
-              <FaFacebook size={26} />
-            </a>
-            <a
-              href="https://www.instagram.com/sunheraweddingplanner20?igsh=YjBldjB5MWs2cnFk&utm_source=qr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-grey-500 mx-2"
-            >
-              <FaInstagram size={26} />
-            </a>
+        <div
+          className="mt-2 items-center flex justify-between md:flex md:flex-row  flex-col md:justify-between"
+          style={{ borderTop: "1px solid gold" }}
+        >
+          <div className="text-m py-4">
+            © copyright Sunhara Wedding Planner{" "}
           </div>
-          <p className="text-sm mt-4">
-            © 2024 | Designed & Managed by{" "}
-            <span className="text-orange-500">Prince Globe</span>
-          </p>
+          <a
+            href="https://www.princeglobe.com/"
+            target="_blank"
+            className="hover:underline"
+          >
+            {" "}
+            Designed & Managed by{" "}
+            <span className="text-orange-400">Prince Globe</span>{" "}
+          </a>
         </div>
       </div>
     </footer>

@@ -4,6 +4,8 @@ import { FaPhoneSquareAlt } from "react-icons/fa";
 import about1 from "../assets/about/about-1.jpg";
 import bgFlower from "../assets/about/bg-flower.png";
 import galleryImg from "../assets/carousel/gallery-6.jpg";
+import phone from "../assets/SVG/phone.svg";
+import smallIcon from "../assets/logo/sunharaFav.png";
 
 const AboutSection = () => {
   return (
@@ -30,10 +32,13 @@ const AboutSection = () => {
         />
       </div>
       <div className="flex flex-col justify-center md:p-8 w-full sm:w-full md:w-1/2 h-full sm:gap-2">
-        <h2 className="text-[#80233a] text-6xl font-bold mt-4 font-dancing">
+        <h2
+          className="text-[#80233a] text-6xl font-bold mt-4 font-dancing"
+          data-aos="zoom-in"
+        >
           About us
         </h2>
-        <h3 className="text-4xl font-semibold mt-2  text-gray-600 mt-4 ">
+        <h3 className="text-4xl font-semibold text-gray-600 mt-4 ">
           We Make Your Every Moment
         </h3>
         <p className="mt-4 text-gray-600  text-xl">
@@ -52,43 +57,35 @@ const AboutSection = () => {
         <div className="mt-6 p-4 bg-[#79a879] rounded-lg">
           <div className="flex flex-col md:flex-row items-center">
             <img
-              src={galleryImg}
+              src={smallIcon}
               alt="Bride"
-              className="w-24 h-24 rounded-full object-cover"
+              className="w-24 h-24  object-cover"
             />
-            <div className="mt-4 md:mt-0 md:ml-4 text-center md:text-left">
+            <div
+              className="mt-4 md:mt-0 md:ml-4 text-center md:text-left"
+              data-aos="zoom-in"
+            >
               <h4 className="text-2xl font-bold text-[#80233a]">Sunhara</h4>
               <p className="text-gray-800 font-bold">
                 "Sunhare sapne, humare saath pura karo."
               </p>
-              <div className="flex justify-center md:justify-start gap-2 mt-4">
-                <a href="#" className="hover:text-pink-600">
-                  {/* <i className='fab fa-facebook-f'></i> */}
-                </a>
-                <a href="#" className="hover:text-pink-600">
-                  {/* <i className='fab fa-twitter'></i> */}
-                </a>
-                <a href="#" className="hover:text-pink-600">
-                  {/* <i className='fab fa-instagram'></i> */}
-                </a>
-                <a href="#" className="hover:text-pink-600">
-                  {/* <i className='fab fa-linkedin'></i> */}
-                </a>
-              </div>
             </div>
           </div>
         </div>
 
-        {/* <div className="flex flex-col md:flex-row justify-between items-center lg:mt-4">
+        <div className="flex flex-col md:flex-row justify-between items-center mt-4 lg:mt-4">
           <div className="flex items-center  md:mt-0">
             <div className="">
-              <FaPhoneSquareAlt size={18} />
+              <img src={phone} className="w-5 h-5 mr-1" />
             </div>
-            <span className=" text-lg font-bold text-pink-700">
-              +123 456 7890
-            </span>
+            <a
+              href="tel:+7908172440"
+              className=" text-lg font-bold text-pink-700"
+            >
+              +91 9614187462
+            </a>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
